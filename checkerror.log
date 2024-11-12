@@ -1,0 +1,21 @@
+Vérification de la syntaxe pour complexe.h :
+gcc -std=c99 -c -Wall -Wextra -pedantic -Werror -fsyntax-only -x c complexe.h
+Vérification de la syntaxe pour complexe.c :
+gcc -std=c99 -c -Wall -Wextra -pedantic -Werror -fsyntax-only -x c complexe.c
+Vérification de la syntaxe pour mandelbrot.c :
+gcc -std=c99 -c -Wall -Wextra -pedantic -Werror -fsyntax-only -x c mandelbrot.c
+
+[le header complexe.h est correctement gardé]
+==code
+
+==endcode
+
+[Définition de complexe_t]
+==code
+complexe_t c; (void) c;
+==endcode
+<stdin>:3:10: error: a function declaration without a prototype is deprecated in all versions of C [-Werror,-Wstrict-prototypes]
+    3 | void test() {
+      |          ^
+      |           void
+1 error generated.

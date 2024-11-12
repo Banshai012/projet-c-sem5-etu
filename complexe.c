@@ -15,7 +15,7 @@ void set_reelle(complexe_t* z, float a){
     z->reelle=a;
 }
 
-void set_reelle(complexe_t* z, float b){
+void set_imaginaire(complexe_t* z, float b){
     z->imaginaire=b;
 }
 
@@ -76,16 +76,16 @@ void module_carre(float* carré, complexe_t z){
 }
 
 void module(float* mod, complexe_t z){
-    float* c;
-    module_carre(c, z);
-    *mod=sqrt(*c);
+    float c;
+    module_carre(&c, z);
+    *mod=sqrt(c);
 }
 
 void argument(float* arg, complexe_t z){
     if (z.imaginaire!=0){
-        float* mod;
-        module(mod, z);
-        *arg=2*atanf(z.imaginaire/(z.reelle+*mod));
+        float mod;
+        module(&mod, z);
+        *arg=2*atanf(z.imaginaire/(z.reelle+mod));
     }
     else if (z.reelle<0){
         *arg=M_PI;

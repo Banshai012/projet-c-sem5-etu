@@ -15,14 +15,14 @@ typedef struct complexe_t complexe_t;
  *
  * CONTRAT À COMPLÉTER
  */
-float reelle(float* a, complexe_t z);
+void reelle(float* a, complexe_t z);
 
 /**
  * imaginaire
  *
  * CONTRAT À COMPLÉTER
  */
-float imaginaire (float* b, complexe_t z);
+void imaginaire (float* b, complexe_t z);
 
 // Procédures set_reelle, set_imaginaire et init
 /**

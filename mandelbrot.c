@@ -17,9 +17,26 @@
 #include "mandelbrot.h"
 
 int mandelbrot(complexe_t z0, complexe_t c, double seuil, int maxit) {
-    /** À COMPLÉTER **/
+    int i=0;
+    float mod;
+    complexe_t zn;
+    puissance(&zn, z0, 2);
+    ajouter(&zn, zn, c);
+    module(&mod, zn);
+    while ((i<=maxit) | (mod<=seuil))
+    {
+        puissance(&zn, zn, 2);
+        ajouter(&zn, zn, c);
+        module(&mod, zn);
+        i++;
+    }
+    if (i<=maxit)
+    {
+        return(i);
+    }
+    else
+    {
+        return(maxit);
+    }
 }
-
-
-
 
