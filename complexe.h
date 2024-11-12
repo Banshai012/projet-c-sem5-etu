@@ -2,7 +2,12 @@
 #define COMPLEX_H
 
 // Type utilisateur complexe_t
-/** À COMPLÉTER **/
+struct complexe_t
+{
+    float reelle;
+    float imaginaire;
+};
+typedef struct complexe_t complexe_t;
 
 // Fonctions reelle et imaginaire
 /**
@@ -10,14 +15,14 @@
  *
  * CONTRAT À COMPLÉTER
  */
-/** FONCTION À DÉCLARER **/
+float reelle(float* a, complexe_t z);
 
 /**
  * imaginaire
  *
  * CONTRAT À COMPLÉTER
  */
-/** FONCTION À DÉCLARER **/
+float imaginaire (float* b, complexe_t z);
 
 // Procédures set_reelle, set_imaginaire et init
 /**
@@ -25,21 +30,21 @@
  *
  * CONTRAT À COMPLÉTER
  */
-/** PROCÉDURE À DÉCLARER **/
+void set_reelle(complexe_t* z, float a);
 
 /**
  * set_imaginaire
  *
  * CONTRAT À COMPLÉTER
  */
-/** PROCÉDURE À DÉCLARER **/
+void set_imaginaire(complexe_t* z, float b);
 
 /**
  * init
  *
  * CONTRAT À COMPLÉTER
  */
-/** PROCÉDURE À DÉCLARER **/
+void init(complexe_t* z, float a, float b);
 
 // Procédure copie
 /**
@@ -59,7 +64,7 @@ void copie(complexe_t* resultat, complexe_t autre);
 // Algèbre des nombres complexes
 /**
  * conjugue
- * Calcule le conjugué du nombre complexe op et le sotocke dans resultat.
+ * Calcule le conjugué du nombre complexe op et le stocke dans resultat.
  *
  * Paramètres :
  *   resultat       [out] Résultat de l'opération
@@ -151,7 +156,7 @@ void puissance(complexe_t* resultat, complexe_t op, int exposant);
  *
  * CONTRAT À COMPLETER
  */
-/** FONCTION À DÉCLARER **/
+void module_carre(float* carré,complexe_t z);
 
 /**
  * module
