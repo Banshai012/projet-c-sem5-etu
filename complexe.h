@@ -163,14 +163,14 @@ void module_carre(float* carré,complexe_t z);
  *
  * CONTRAT À COMPLETER
  */
-/** FONCTION À DÉCLARER **/
+void module(float* mod, complexe_t z);
 
 /**
  * argument
  *
  * CONTRAT À COMPLETER
  */
-/** FONCTION À DÉCLARER **/
+void argument(float* arg, complexe_t z);
 
 
 #endif // COMPLEXE_H

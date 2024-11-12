@@ -71,12 +71,28 @@ void puissance(complexe_t* resultat, complexe_t op, int exposant){
 }
 
 // Implantations du module et de l'argument
-void module_carre(float* carré,complexe_t z){
-    *carré=1;
+void module_carre(float* carré, complexe_t z){
+    *carré=pow(z.reelle,2)+pow(z.imaginaire,2);
 }
 
-/** FONCTION module À IMPLANTER **/
+void module(float* mod, complexe_t z){
+    float* c;
+    module_carre(c, z);
+    *mod=sqrt(*c);
+}
 
-/** FONCTION argument À IMPLANTER **/
+void argument(float* arg, complexe_t z){
+    if (z.imaginaire!=0){
+        float* mod;
+        module(mod, z);
+        *arg=2*atanf(z.imaginaire/(z.reelle+*mod));
+    }
+    else if (z.reelle<0){
+        *arg=M_PI;
+    }
+    else{
+        *arg=0;
+    }
+}
 
 
