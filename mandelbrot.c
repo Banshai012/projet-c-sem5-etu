@@ -15,6 +15,7 @@
 // mandelbrot - Copyright (c) 2023 Guillaume Dupont
 // Contact: <guillaume.dupont@toulouse-inp.fr>
 #include "mandelbrot.h"
+#include "complexe.h"
 
 int mandelbrot(complexe_t z0, complexe_t c, double seuil, int maxit) {
     int i=0;

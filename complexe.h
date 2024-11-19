@@ -4,8 +4,8 @@
 // Type utilisateur complexe_t
 struct complexe_t
 {
-    float reelle;
-    float imaginaire;
+    double reelle;
+    double imaginaire;
 };
 typedef struct complexe_t complexe_t;
 
@@ -15,14 +15,14 @@ typedef struct complexe_t complexe_t;
  *
  * CONTRAT À COMPLÉTER
  */
-void reelle(float* a, complexe_t z);
+void reelle(double* a, complexe_t z);
 
 /**
  * imaginaire
  *
  * CONTRAT À COMPLÉTER
  */
-void imaginaire (float* b, complexe_t z);
+void imaginaire (double* b, complexe_t z);
 
 // Procédures set_reelle, set_imaginaire et init
 /**
@@ -30,21 +30,21 @@ void imaginaire (float* b, complexe_t z);
  *
  * CONTRAT À COMPLÉTER
  */
-void set_reelle(complexe_t* z, float a);
+void set_reelle(complexe_t* z, double a);
 
 /**
  * set_imaginaire
  *
  * CONTRAT À COMPLÉTER
  */
-void set_imaginaire(complexe_t* z, float b);
+void set_imaginaire(complexe_t* z, double b);
 
 /**
  * init
  *
  * CONTRAT À COMPLÉTER
  */
-void init(complexe_t* z, float a, float b);
+void init(complexe_t* z, double a, double b);
 
 // Procédure copie
 /**
@@ -156,21 +156,21 @@ void puissance(complexe_t* resultat, complexe_t op, int exposant);
  *
  * CONTRAT À COMPLETER
  */
-void module_carre(float* carré,complexe_t z);
+void module_carre(double* carré,complexe_t z);
 
 /**
  * module
  *
  * CONTRAT À COMPLETER
  */
-void module(float* mod, complexe_t z);
+void module(double* mod, complexe_t z);
 
 /**
  * argument
  *
  * CONTRAT À COMPLETER
  */
-void argument(float* arg, complexe_t z);
+void argument(double* arg, complexe_t z);
 
 
 #endif // COMPLEXE_H

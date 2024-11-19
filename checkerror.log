@@ -4,18 +4,16 @@ Vérification de la syntaxe pour complexe.c :
 gcc -std=c99 -c -Wall -Wextra -pedantic -Werror -fsyntax-only -x c complexe.c
 Vérification de la syntaxe pour mandelbrot.c :
 gcc -std=c99 -c -Wall -Wextra -pedantic -Werror -fsyntax-only -x c mandelbrot.c
-
-[le header complexe.h est correctement gardé]
-==code
-
-==endcode
-
-[Définition de complexe_t]
-==code
-complexe_t c; (void) c;
-==endcode
-<stdin>:3:10: error: a function declaration without a prototype is deprecated in all versions of C [-Werror,-Wstrict-prototypes]
-    3 | void test() {
-      |          ^
-      |           void
-1 error generated.
+mandelbrot.c:26:12: error: incompatible pointer types passing 'float *' to parameter of type 'double *' [-Werror,-Wincompatible-pointer-types]
+   26 |     module(&mod, zn);
+      |            ^~~~
+./complexe.h:166:21: note: passing argument to parameter 'mod' here
+  166 | void module(double* mod, complexe_t z);
+      |                     ^
+mandelbrot.c:31:16: error: incompatible pointer types passing 'float *' to parameter of type 'double *' [-Werror,-Wincompatible-pointer-types]
+   31 |         module(&mod, zn);
+      |                ^~~~
+./complexe.h:166:21: note: passing argument to parameter 'mod' here
+  166 | void module(double* mod, complexe_t z);
+      |                     ^
+2 errors generated.
