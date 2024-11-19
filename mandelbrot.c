@@ -19,7 +19,7 @@
 
 int mandelbrot(complexe_t z0, complexe_t c, double seuil, int maxit) {
     int i=0;
-    float mod;
+    double mod;
     complexe_t zn;
     puissance(&zn, z0, 2);
     ajouter(&zn, zn, c);
