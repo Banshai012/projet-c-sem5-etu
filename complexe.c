@@ -2,12 +2,14 @@
 #include <math.h>           // Pour certaines fonctions trigo notamment
 
 // Implantations de reelle et imaginaire
-void reelle(double* a, complexe_t z){
-    *a=z.reelle;
+double reelle(complexe_t z){
+    double reelle=z.reelle;
+    return reelle;
 }
 
-void imaginaire(double* b, complexe_t z){
-    *b=z.imaginaire;
+double imaginaire(complexe_t z){
+    double imaginaire=z.imaginaire;
+    return imaginaire;
 }
 
 // Implantations de set_reelle et set_imaginaire
@@ -71,28 +73,26 @@ void puissance(complexe_t* resultat, complexe_t op, int exposant){
 }
 
 // Implantations du module et de l'argument
-void module_carre(double* carré, complexe_t z){
-    *carré=pow(z.reelle,2)+pow(z.imaginaire,2);
+double module_carre(complexe_t z){
+    return pow(z.reelle,2)+pow(z.imaginaire,2);
 }
 
-void module(double* mod, complexe_t z){
-    double c;
-    module_carre(&c, z);
-    *mod=sqrt(c);
+double module(complexe_t z){
+    return sqrt(module_carre(z));
 }
 
-void argument(double* arg, complexe_t z){
+double argument(complexe_t z){
+    double arg;
     if (z.imaginaire!=0){
-        double mod;
-        module(&mod, z);
-        *arg=2*atanf(z.imaginaire/(z.reelle+mod));
+        arg=2*atanf(z.imaginaire/(z.reelle+module(z)));
     }
     else if (z.reelle<0){
-        *arg=M_PI;
+        arg= 3.141592653589793;
     }
     else{
-        *arg=0;
+        arg=0;
     }
+    return arg;
 }
 
 

@@ -13,36 +13,67 @@ typedef struct complexe_t complexe_t;
 /**
  * reelle
  *
- * CONTRAT À COMPLÉTER
+ * Retourne la partie réelle d'un nombre complexe
+ *
+ * Paramètres :
+ *   z      [in] Nombre complexe
+ *
+ * Post-condition : réelle est la partie réelle de z
  */
-void reelle(double* a, complexe_t z);
+double reelle( complexe_t z);
 
 /**
  * imaginaire
+ * 
+ * Retourne la partie imaginaire d'un nombre complexe
  *
- * CONTRAT À COMPLÉTER
+ * Paramètres :
+ *   z      [in] Nombre complexe
+ *
+ * Post-condition : imaginaire est la partie réelle de z
  */
-void imaginaire (double* b, complexe_t z);
+double imaginaire (complexe_t z);
 
 // Procédures set_reelle, set_imaginaire et init
 /**
  * set_reelle
  *
- * CONTRAT À COMPLÉTER
+ * Modifie la partie réelle d'un nombre complexe
+ *
+ * Paramètres :
+ *   resultat       [in out] Nombre complexe pour lequel on modifie sa partie réelle
+ *   a          [in]  Nouvelle partie réelle du nombre complexe
+ *
+ * Pré-conditions : z non null
+ * Post-conditions : reelle(&z) = a
  */
 void set_reelle(complexe_t* z, double a);
 
 /**
  * set_imaginaire
  *
- * CONTRAT À COMPLÉTER
+ * Modifie la partie imaginaire d'un nombre complexe
+ *
+ * Paramètres :
+ *   resultat       [in out] Nombre complexe pour lequel on modifie sa partie imaginaire
+ *   a          [in]  Nouvelle partie imaginaire du nombre complexe
+ *
+ * Pré-conditions : z non null
+ * Post-conditions : imaginaire(&z) = b
  */
 void set_imaginaire(complexe_t* z, double b);
 
 /**
  * init
  *
- * CONTRAT À COMPLÉTER
+ * Initialise un nombre complexe
+ *
+ * Paramètres :
+ *   z       [in out] Nombre complexe que l'on initialise
+ *   a          [in] Partie réelle du nombre complexe qu'on initialise
+ *   b          [in] Partie imaginaire du nombre complexe qu'on initialise
+ * Pré-conditions : z non null
+ * Post-conditions : imaginaire(&z) = b et réelle(&z) = a
  */
 void init(complexe_t* z, double a, double b);
 
@@ -154,23 +185,37 @@ void puissance(complexe_t* resultat, complexe_t op, int exposant);
 /**
  * module_carre
  *
- * CONTRAT À COMPLETER
+ * Calcule et retourne le module au carré d'un nombre complexe
+ *
+ * Paramètres :
+ *   z       [in] Nombre complexe dont on calcule le module au carré
+ * Post-conditions : on retourne le module de z au carré
  */
-void module_carre(double* carré,complexe_t z);
+double module_carre(complexe_t z);
 
 /**
  * module
  *
- * CONTRAT À COMPLETER
+ * Calcule et retourne le module d'un nombre complexe
+ *
+ * Paramètres :
+ *   z       [in] Nombre complexe dont on calcule le module 
+ * Post-conditions : module(z) = sqrt(module_carre(z))
  */
-void module(double* mod, complexe_t z);
+double module(complexe_t z);
 
 /**
  * argument
  *
- * CONTRAT À COMPLETER
+  * Calcule et retourne l'argument d'un nombre complexe
+ *
+ * Paramètres :
+ *   z       [in] Nombre complexe dont on calcule l'argument
+ * Prés-conditions : le nombre complexe z n'est pas nul
+ * Post-conditions : argument d'un réel strictement positif vaut 0, argument d'un réel strictement négatif
+ * vaut pi, on retourne l'argument du nombre complexe
  */
-void argument(double* arg, complexe_t z);
+double argument(complexe_t z);
 
 
 #endif // COMPLEXE_H
